@@ -1,4 +1,4 @@
-// -*- Doc -*-
+// -*- adoc -*-
 // vim: set syntax=asciidoc:
 
 = Erlog
@@ -16,13 +16,30 @@ Robert Virding et al
 
 == Overview
 
+Erlog is an implementation of ISO Prolog that can run in an Erlang
+process, as such it is ideally suited for adding logical infrences to
+a larger Erlang program (Including LFE and elixir programs). 
 
+
+== Erlog vs SWI Prolog
+
+Erlog is not as full featured or robust as SWI Prolog (or other
+prologs). If you want to learn prolog or do a general prolog
+application we suggest using SWI Prolog. 
+
+Erlog will excel where close interactions between erlang and prolog
+are needed, or where you can take advantage of the erlang process
+model to run lots of processes at once.
+
+== Limitations
 
 
 == Philosophy
 
 
-== Erlog vs SWI Prolog
+
+
+
 
 == Features
 
@@ -33,11 +50,10 @@ Robert Virding et al
 == Roadmap
 
 
-
 == Enhancements
 
 
-== Limitations
+
 
 
 
