@@ -1,0 +1,644 @@
+// -*- Doc -*-
+// vim: set syntax=asciidoc:
+
+= The Concurrent Schemer
+Joseph Wayne Norton <norton@alum.mit.edu>
+:Author Initials: JWN
+:title: The Concurrent Schemer
+:description: (define #Fun (+ #Scheme #Erlang))
+:footer: Functional programming for the better good!
+:brand: CSCM
+:brandref: https://github.com/the-concurrent-schemer
+:doctype: article
+:toc2:
+:backend: bootstrap-docs
+:link-assets:
+:glyphicons: http://glyphicons.com[Glyphicons]
+
+== Contributors
+
+image:images/logo.jpg[width="225",height="225",alt="Logo"]
+
+*The primary call for help is to review, implement _(in Erlang)_, and
+test the Scheme R7RS standard libraries.* A secondary call for help is
+to identify, to fix, and to resolve key issues posted to CSCM's issue
+tracker.  A little bit of Scheme and/or Erlang programming experience
+is helpful but not absolutely necessary.
+
+section 2.1 https://github.com/the-concurrent-schemer/scm/issues/2[CSCM Issue #2]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 4.3 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_analyze_macro.erl[Macros]::
+[horizontal]
+Development/Test;;
+  *beta* done
+Review;;
+  _needs peer review_
+
+section 5.4 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_analyze_program.erl[Syntax definitions]::
+[horizontal]
+Development/Test;;
+  *beta* done
+Review;;
+  _needs peer review_
+
+section 5.5 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_analyze_program.erl[Record-type definitions]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+section 6.1 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_equality.erl[Equivalence predicates]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.2 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_number.erl[Numbers]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+section 6.3 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_boolean.erl[Booleans]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.4 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_list.erl[Pairs and lists]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.5 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_symbol.erl[Symbols]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.6 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_char.erl[Characters]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.7 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_string.erl[Strings]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.8 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_vector.erl[Vectors]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.9 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_bytevector.erl[Bytevectors]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.10 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_control.erl[Control features]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.11 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_exception.erl[Exceptions]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.13 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_io.erl[Input and output]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.14 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_system.erl[System interface]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_lambda.erl[Case-Lambda Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_char.erl[Char Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_complex.erl[Complex Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_cxr.erl[CxR Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_eval.erl[Eval Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_file.erl[File Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_inexact.erl[Inexact Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_lazy.erl[Lazy Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_load.erl[Load Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_context.erl[Process-Context Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_read.erl[Read Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_repl.erl[Repl Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_time.erl[Time Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_write.erl[Write Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_r5rs.erl[R5RS Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+CAUTION: _Please stay tuned for CSCM updates.  The specification,
+documentation, and software are under construction._
+
+== Miscellaneous TODO Items
+
+- pending R7RS draft 10 changes
+  * Remove extra exponent markers from formal syntax
+
+== Getting Started
+
+An incomplete list of steps for "Getting Started".
+
+*Mandatory*
+
+1. read the Scheme
+  http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/overview.pdf[overview]
+  paper
+
+2. download and build
++
+[source,shell]
+------
+git clone git://github.com/the-concurrent-schemer/scm.git
+cd scm
+make deps
+make
+
+------
++
+TIP: Check the Software Requirements listed below before attempting to
+download and build!
+
+3. run "hello world" example
++
+[source,scheme]
+------
+(define hello-world
+  (lambda ()
+    (display "Hello World!")))
+------
++
+
+Since CSCM is under construction, this example must be run manually
+for the time being.  Let's use the Erlang shell for illustrative
+purposes.
+
+   a. Start the Erlang shell.
++
+[source,shell]
+------
+erl -pa ./deps/parse-tools/ebin -pa ebin
+------
+
+   b. Save the "hello word" program as an Erlang string.
++
+[source,erlang]
+------
+Str = "(define hello-world (lambda () (display \"Hello World!\")))".
+------
++
+
+   c. Create an empty Scheme environment.
++
+[source,erlang]
+------
+Env = scmi_env:the_empty().
+------
++
+
+   d. Create and register a native Erlang function as a simple
+      implementation for the Scheme display library procedure. The
+      Erlang function writes the given arguments to stdout as Erlang
+      terms and simply returns a Scheme #false to the caller.
++
+[source,erlang]
+------
+False = {boolean,undefined,false}.
+Proc = {nipv, 0, fun(Args) -> io:format("~p~n", [Args]), False end}.
+scmi_env:define_variable('display', Proc, Env).
+------
++
+
+   e. Parse and evaluate the "hello world" program.
++
+[source,erlang]
+------
+{ok, Exp} = scmd_parse:string(Str).
+scmi_eval:eval(Exp, Env).
+------
++
+
+   f. Call the Scheme "hello-world" procedure and show the Scheme
+      return value in the Erlang shell.
++
+[source,erlang]
+------
+R = scmi_eval:eval(['hello-world'], Env).
+R.
+------
+
+*Optional (but helpful)*
+
+1. read the final Scheme R7RS
+   http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/r7rs.pdf[small
+   report] specification and
+   http://trac.sacrideo.us/wg/wiki/R7RSSmallErrata[errata]
+
+2. review and understand
+   a. the layout of the scm git
+      https://github.com/the-concurrent-schemer/scm/tree/dev[repository]
++
+TIP: Filename prefixes have meaning => +scmd_+ is "datum", +scmi_+ is
+"interpreter", +scmc_+ is "compiler", +scml_+ is "library", and +xfm_+
+is "Erlang parse transform".
+
+   b. the CSCM datum model
+       ** https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_types_impl.erl[implementation]
+          of Scheme datums by Erlang terms
+       ** Scheme
+          https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_equality.erl#L23[equivalence
+          predicates] base library and a subset of Scheme
+          https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_number.erl#L217[numbers]
+          base library
+       ** Erlang
+          https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_types.erl[types]
+          used for documentation and static type analysis
++
+TIP: If helpful, review Erlang's
+http://www.erlang.org/doc/reference_manual/typespec.html[documentation]
+about types and function specifications.
+
+   c. Scheme
+      https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_scan.xrl[datum]
+      and number
+      (https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_scan_num2.xrl[base
+      2],
+      https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_scan_num8.xrl[base
+      8],
+      https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_scan_num10.xrl[base
+      10], and
+      https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_scan_num16.xrl[base
+      16]) tokenizers
+
+   d. Scheme
+      https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_parse.yrl[datum]
+      and
+      https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_parse_numR.yrl[number]
+      parsers
+
+   e. Scheme environment resource
+      https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_env.erl[wrapper]
+      and
+      https://github.com/the-concurrent-schemer/scm/blob/dev/c_src/scmi_env.cc[NIF]
++
+TIP: If helpful, review Erlang's
+http://www.erlang.org/doc/man/erl_nif.html[documentation] about API
+functions for an Erlang NIF library.
+
+   f. Scheme interpreter
+      https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_eval.erl[evaluator]
+      and
+      https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_analyze.erl[syntactic
+      analyzer]
+
+   g. Scheme
+      https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_analyze_primitive.erl[primitive]
+      expressions
+
+   h. Scheme
+      https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_analyze_derived.erl[derived]
+      expressions
+
+   i. Scheme
+      https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_analyze_macro.erl[macro]
+      expressions
+
+   j. Scheme
+      https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_control.erl#L124[control
+      features] base library
+
+   k. Scheme
+      https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_exception.erl#L71[exceptions]
+      base library
+
+   l. ...
+
+3. run xref
++
+[source,shell]
+------
+make xref
+
+------
+
+4. generate edocs
++
+[source,shell]
+------
+make doc
+
+------
+
+NOTE: Steps describing how to setup and to run Erlang's dialyzer will
+be added later.
+
+== Lines Of Code
+
+*Scheme datum*
+
+~*1,200 Erlang* LOC implements a Scheme datum tokenizer and parser.
+
+------
+ $ cloc src/scmd_*
+       12 text files.
+       12 unique files.
+        0 files ignored.
+
+ http://cloc.sourceforge.net v 1.58  T=0.5 s (24.0 files/s, 3856.0 lines/s)
+ -------------------------------------------------------------------------------
+ Language                     files          blank        comment           code
+ -------------------------------------------------------------------------------
+ Erlang (yecc)                    2            108             79            471
+ Erlang (leex)                    5            192            264            332
+ Erlang                           5             46            124            312
+ -------------------------------------------------------------------------------
+ SUM:                            12            346            467           1115
+ -------------------------------------------------------------------------------
+------
+
+*Scheme interpreter*
+
+\~*600 C/C++* LOC and ~*3,200 Erlang* LOC implements all Scheme
+primitive, derived, program, and macro expressions.
+
+------
+ $ cloc src/scmi_* c_src
+       23 text files.
+       23 unique files.
+        0 files ignored.
+
+ http://cloc.sourceforge.net v 1.58  T=0.5 s (46.0 files/s, 10914.0 lines/s)
+ -------------------------------------------------------------------------------
+ Language                     files          blank        comment           code
+ -------------------------------------------------------------------------------
+ Erlang                          15            669            659           3157
+ C++                              4            140            105            541
+ C/C++ Header                     4             26             88             72
+ -------------------------------------------------------------------------------
+ SUM:                            23            835            852           3770
+ -------------------------------------------------------------------------------
+------
+
+*Scheme library*
+
+~*400 Erlang* LOC implements Scheme exceptions, continuations,
+dynamic-wind, and other control procedures.
+
+------
+ $ cloc src/scml_base_control.erl src/scml_base_exception.erl
+        2 text files.
+        2 unique files.
+        0 files ignored.
+
+ http://cloc.sourceforge.net v 1.58  T=0.5 s (4.0 files/s, 1238.0 lines/s)
+ -------------------------------------------------------------------------------
+ Language                     files          blank        comment           code
+ -------------------------------------------------------------------------------
+ Erlang                           2             67            187            365
+ -------------------------------------------------------------------------------
+ SUM:                             2             67            187            365
+ -------------------------------------------------------------------------------
+------
+
+NOTE: The above measurements were taken on a snapshot of CSCM after
+v0.5.0 with a modified version of cloc for detecting Erlang leex/yecc
+files.
+
+== Submissions
+
+This process is a +DRAFT+.
+
+Please review and follow these guidelines for contribution
+submissions.
+
+- Try to keep all submissions simple, clear, and concise
+  * remove all unused or unnecessary code
+  * remove unnecessary whitespace
+  * fix all compiler warnings, run xref, and run dialyzer on each
+    submission
+  * use +@TODO+ comment markers when helpful
+
+- Create a topic branch off the 'dev' branch for each pull request
+
+- Create a single commit for each pull request and try to focus each
+  commit on a single topic or a set of related topics => _help make it
+  easier for others to review and to test_
+
+- Update the Edoc +@author+ tag of each module where you are
+  considered a primary author
+
+- Ensure the the copyright and license shown below is included in all
+  submissions
+
+- As much as "practically" possible, follow the CSCM roadmap and
+  mailto:nortonATalum.mit.edu?subject=Contributing%20to%20The%20Concurrent%20Schemer[notify
+  Joe N.] in advance of your plans to minimize the duplication efforts
+
+- Most importantly there is no rush and have fun!
+
+NOTE: For the near term, only documentation and code submissions will
+be accepted in an attempt to keep the layout and contents of the scm
+repository simple, clear and concise.  Testing such as unit,
+regression, compatibility, and performance testing will be addressed
+later.
+
+== Software Requirements
+
+Erlang/OTP (Mandatory)::
+- Erlang - http://www.erlang.org/
+  * 17 or newer, 17 has been tested most recently
+  * _required for development_
+++
+TIP: If you need to build and to install Erlang on your own,
+https://github.com/spawngrid/kerl[kerl] is highly recommended
+
+Git (Mandatory)::
+- Git - http://git-scm.com/
+  * Git 1.5.4 or newer, Git 1.9.3 has been tested most recently
+  * _required for GitHub_
+- GitHub - https://github.com
+  * Anonymous read-only access using the GIT protocol is default.
+  * Team members having read-write access should add his/her ssh
+    public key under your GitHub account.
+
+Python (Optional)::
+- Python - http://www.python.org
+  * Python 2.4 or newer, Python 2.7.6 has been tested most recently
+    (CAUTION: Python 3.x might be too new)
+  * _required for AsciiDoc_
+
+AsciiDoc (Optional)::
+- AsciiDoc - http://www.methods.co.nz/asciidoc/index.html
+  * Must be version 8.6.1 or newer, 8.6.9 has been tested most
+    recently
+  * _required for generating CSCM's markdown documentation_
+
+== Copyright and License
+
+image:images/logo.jpg[width="200",height="200",alt="Logo"]
+
+------------
+The MIT License
+
+Copyright (C) 2013-2014 by Joseph Wayne Norton <norton@alum.mit.edu>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+------------
+
+== Resources
+
+*Emacs*
+
+An editor (just like a programming language) is a creature of choice.
+An editor should also be a creature of comfort.  If Emacs happens to
+be your favorite creature for editing, I highly recommend the
+following packages:
+
+  * https://github.com/norton/emacs-starter-kit/blob/norton/norton/init.el#L43[whitespace]
+  * https://github.com/norton/emacs-starter-kit/blob/norton/norton/init.el#L75[indent]
+  * erlang with
+    https://github.com/norton/emacs-starter-kit/blob/norton/norton/erlang.el#L31[flymake]
+    (and rebar support)
+
+These packages are very helpful (and comforting) for Erlang
+development.
+
+// -EOF-

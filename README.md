@@ -1,4 +1,2 @@
-erlog.org
-=========
-
-Erlog.org web page
+scm-doc
+=======
