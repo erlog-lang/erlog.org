@@ -20,6 +20,9 @@ Erlog is an implementation of ISO Prolog that can run in an Erlang
 process, as such it is ideally suited for adding logical infrences to
 a larger Erlang program (Including LFE and elixir programs). 
 
+Erlog can be installed with rebar, it will not install any other
+packages. 
+
 
 == Erlog vs SWI Prolog
 
@@ -27,21 +30,56 @@ Erlog is not as full featured or robust as SWI Prolog (or other
 prologs). If you want to learn prolog or do a general prolog
 application we suggest using SWI Prolog. 
 
-Erlog will excel where close interactions between erlang and prolog
-are needed, or where you can take advantage of the erlang process
+Erlog will excel where close interactions between Erlang and prolog
+are needed, or where you can take advantage of the Erlang process
 model to run lots of processes at once.
+
+== Features
+
+* Close Integration with Erlang programs
+* Ability to call Erlang code from Prolog
+* Ability to work with Records and other Erlang Data structures
+* Able to unify over ETS Tables
+* Send and recieve messages, but not selective recieve 
 
 == Limitations
 
+Erlog is a somewhat limited Prolog at the moment. It lacks the
+following features. (Some are being worked on)
 
-== Philosophy
+* Garbage Collection
+* Most prolog IO functions
+* Explicit Concurrency 
+* Support for Erlang Maps
+
+
+
+== Add on Packages
+
+The base erlog package is fairly minimal. It contains the base
+language and not much else. There are several packages that work with
+it to build up the system
+
+=== erlog-server
+
+Erlog-server is a project that will take a prolog file and compile it
+into an erlang module that implements a gen_server. Thus it ends up
+with a _.beam_ file that contains the prolog code and exports an API
+that the programmer can specify from prolog. 
+
+Note that this is not actually a prolog compiler, it just embeds the
+prolog AST into the erlang beam file. 
+
+
+=== erlog-unit
+
+Erlog unit is the start of a unit & property based testing framework
+for erlog. 
 
 
 
 
 
-
-== Features
 
 
 == Documentation
@@ -53,14 +91,8 @@ model to run lots of processes at once.
 == Enhancements
 
 
-
-
-
-
 == Surprises
 
-
-== Support
 
 
 == Copyright and License
